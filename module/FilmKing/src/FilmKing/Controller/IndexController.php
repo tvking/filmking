@@ -8,7 +8,9 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        $viewModel = new ViewModel();
+        $viewModel = new ViewModel(
+            ['message' => 'hazzar']
+        );
         $viewModel->setTemplate('home');
 
         return $viewModel;

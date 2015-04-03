@@ -2,7 +2,7 @@
 return [ 
     'routes' => [
         'home' => [
-            'type' => 'Zend\Mvc\Router\Http\Literal',
+            'type' => 'Literal',
             'options' => [
                 'route'    => '/',
                 'defaults' => [
@@ -12,31 +12,33 @@ return [
             ],
             'may_terminate' => true,
             'child_routes'  => [
-                'film' => [
+                'films' => [
                     'type'    => 'Literal',
                     'options' => [
-                        'route'    => '/films',
+                        'route'    => 'films',
                         'defaults' => [
                             'controller' => 'FilmController',
                             'action'     => 'index',
                         ]
                     ],
                     'may_terminate' => true,
-                ],
-                'films' => [
-                    'type'    => 'Segment',
-                    'options' => [
-                        'route'    => '/films/[:id]/[:name]',
-                        'constraints' => [
-                            'id'   => '[0-9]+',
-                            'name' => '[a-zA-Z0-9_-]+',
+                    'child_routes'  => [
+                        'film' => [
+                            'type'    => 'Segment',
+                            'options' => [
+                                'route'    => '/[:id]/[:name]',
+                                'constraints' => [
+                                    'id'   => '[0-9]+',
+                                    'name' => '[a-zA-Z0-9_-]+',
+                                ],
+                                'defaults' => [
+                                    'controller' => 'FilmController',
+                                    'action'     => 'film',
+                                ]
+                            ],
+                            'may_terminate' => true,
                         ],
-                        'defaults' => [
-                            'controller' => 'FilmController',
-                            'action'     => 'film',
-                        ]
                     ],
-                    'may_terminate' => true,
                 ],
             ],
         ],

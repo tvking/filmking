@@ -8,7 +8,8 @@ return [
     'template_map' => [
         'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
         'home'          => __DIR__ . '/../view/filmking/index/index.phtml',
-        'films/index'   => __DIR__ . '/../view/filmking/films/index.phtml',
+        'films/index'   => __DIR__ . '/../view/filmking/film/index.phtml',
+        'films/film'    => __DIR__ . '/../view/filmking/film/film.phtml',
         'error/404'     => __DIR__ . '/../view/error/404.phtml',
         'error/index'   => __DIR__ . '/../view/error/index.phtml',
     ],

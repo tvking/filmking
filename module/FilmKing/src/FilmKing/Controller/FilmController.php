@@ -13,4 +13,12 @@ class FilmController extends AbstractActionController
 
         return $viewModel;
     }
+
+    public function filmAction()
+    {
+        $viewModel = new ViewModel();
+        $viewModel->setTemplate('films/film');
+
+        return $viewModel;   
+    }
 }
