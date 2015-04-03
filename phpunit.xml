@@ -1,0 +1,20 @@
+<phpunit
+     bootstrap="init_autoloader.php"
+     colors="true"
+     convertErrorsToExceptions="true"
+     convertNoticesToExceptions="true"
+     convertWarningsToExceptions="true"
+     processIsolation="false"
+     stopOnError="false"
+     stopOnFailure="false"
+     stopOnIncomplete="false"
+     stopOnSkipped="false"
+     strict="true"
+     verbose="true"
+    >
+  <testsuites>
+    <testsuite name="filmking">
+      <directory>module/Application/tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
