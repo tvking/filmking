@@ -24,7 +24,7 @@ class Module
     public function getConfig()
     {
         $config                    = include __DIR__ . '/config/module.config.php';
-        $config['controller']      = include __DIR__ . '/config/controllers.config.php';
+        $config['controllers']     = include __DIR__ . '/config/controllers.config.php';
         $config['router']          = include __DIR__ . '/config/router.config.php';
         $config['service_manager'] = include __DIR__ . '/config/serviceManager.config.php';
         $config['view_manager']    = include __DIR__ . '/config/viewManager.config.php';
