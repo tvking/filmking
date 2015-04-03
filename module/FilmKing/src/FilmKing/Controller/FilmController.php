@@ -16,7 +16,13 @@ class FilmController extends AbstractActionController
 
     public function filmAction()
     {
-        $viewModel = new ViewModel();
+        $filmId    =  $this->params()->fromRoute('id');
+        $filmName  =  $this->params()->fromRoute('name');
+
+        $viewModel = new ViewModel([
+            'filmId'   => $filmId,
+            'filmName' => $filmName,
+        ]);
         $viewModel->setTemplate('films/film');
 
         return $viewModel;   
